@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FullScreenApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Grid Grid.Row="1" RowDefinitions="Auto, Auto, Auto,Auto, Auto, Auto" Padding="25,25,25,15" RowSpacing="10">
+                <Label Grid.Row="1" Text="ChangeImersive" />
+                <CheckBox Grid.Row="1" IsChecked="{Binding ChangeImersive}" />
+                <Label Grid.Row="2" Text="LowProfile" />
+                <CheckBox Grid.Row="2" IsChecked="{Binding LowProfile}" />
+                <Label Grid.Row="3" Text="Fullscreen" />
+                <CheckBox Grid.Row="3" IsChecked="{Binding Fullscreen}" />
+                <Label Grid.Row="4" Text="HideNavigation" />
+                <CheckBox Grid.Row="4" IsChecked="{Binding HideNavigation}" />
+                <Label Grid.Row="5" Text="Immersive" />
+                <CheckBox Grid.Row="5" IsChecked="{Binding Immersive}" />
+                <Label Grid.Row="6" Text="ImmersiveSticky" />
+                <CheckBox Grid.Row="6" IsChecked="{Binding ImmersiveSticky}" />
+            </Grid>
+            <Button Grid.Row="2" Margin="25,20,25,20"
+                    Text="{Binding ImersiveLabel}}"
+                    Style="{StaticResource PrimaryButton}"
+                    Command="{Binding ImersiveCommand}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
